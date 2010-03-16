@@ -17,3 +17,7 @@ TODO:
 
 Dependency:
 - django-lingua
+
+Source:
+http://geolite.maxmind.com/download/worldcities/
+http://www.andrewpatton.com/countrylist.html
