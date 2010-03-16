@@ -1,0 +1,7 @@
+========================
+Django Countria Changelog
+========================
+
+Version 0.1, 16th March 2010
+========================
+Initial Release

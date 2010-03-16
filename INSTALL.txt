@@ -1,0 +1,13 @@
+Dependency:
+- django-lingua
+
+
+Download or checkout django-lingua
+git http://github.com/geomin/django-lingua.git
+
+Download or checkout django-countria
+git http://github.com/geomin/django-countria.git
+
+Add the paths to PYTHONPATH
+
+Ready!

@@ -1,0 +1,35 @@
+1. Checkout the code
+    - django-lingua
+    git http://github.com/geomin/django-lingua.git
+
+    - django-countria
+    git http://github.com/geomin/django-countria.git
+
+2. Add the paths to PYTHONPATH
+
+3. Add 'countria' to your INSTALLED_APPS:
+
+    INSTALLED_APPS = (
+        #.....
+        'countria',
+        #.....
+    )
+
+4. Add it to your models like:
+    ================================================================
+    from django.db import models
+    from django.contrib.auth.models import User
+    from countria.models import *
+
+    class UserProfile(models.Model):
+        user        = models.ForeignKey(User, unique=True)
+        country     = models.ForeignKey(Country)
+        city        = models.ForeignKey(City)
+        #etc.
+    ===============================================================
+5. Run ./manage.py syncdb
+
+Done!
+
+To query countria is standard django queries http://docs.djangoproject.com/en/dev/topics/db/queries/ 
+
