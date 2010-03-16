@@ -16,7 +16,7 @@ TODO:
 - Fill the missing data like population, lat & long
 
 Dependency:
-- django-lingua
+- http://github.com/geomin/django-lingua
 
 Source:
 http://geolite.maxmind.com/download/worldcities/
