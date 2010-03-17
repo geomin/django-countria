@@ -1,6 +1,7 @@
 from django.db import models
 from lingua import translation
 from decimal import Decimal
+import settings
 
 class Currency(models.Model):
     class Translation(translation.Translation):
@@ -42,6 +43,9 @@ class Country(models.Model):
     calling_code = property(__calling_code)
 
     def __unicode__(self):
+        if hasattr(settings, 'MAX_COUNTRY_NAME_LENGTH'):
+            if len(self.name) > settings.MAX_COUNTRY_NAME_LENGTH:
+                return self.name[:settings.MAX_COUNTRY_NAME_LENGTH] + '...'
         return self.name
 
 class City(models.Model):

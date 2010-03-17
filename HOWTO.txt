@@ -29,6 +29,8 @@
     ===============================================================
 5. Run ./manage.py syncdb
 
+You can add MAX_COUNTRY_NAME_LENGTH to your settings.py to force the length of the country name.
+
 Done!
 
 To query countria is standard django queries http://docs.djangoproject.com/en/dev/topics/db/queries/ 
