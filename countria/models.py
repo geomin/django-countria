@@ -11,6 +11,9 @@ class Currency(models.Model):
     class Meta:
         unique_together = (('name','code'), )
 
+    def __unicode__(self):
+        return unicode(self.name)
+
 class Continent(models.Model):
     class Translation(translation.Translation):
         name   = models.CharField(max_length=16)
@@ -18,6 +21,9 @@ class Continent(models.Model):
 
     class Meta:
         unique_together = (('name','code'), )
+
+    def __unicode__(self):
+        return unicode(self.name)
 
 class Country(models.Model):
     class Translation(translation.Translation):
@@ -46,7 +52,7 @@ class Country(models.Model):
         if hasattr(settings, 'MAX_COUNTRY_NAME_LENGTH'):
             if len(self.name) > settings.MAX_COUNTRY_NAME_LENGTH:
                 return self.name[:settings.MAX_COUNTRY_NAME_LENGTH] + '...'
-        return self.name
+        return unicode(self.name)
 
 class City(models.Model):
     class Translation(translation.Translation):
@@ -58,6 +64,9 @@ class City(models.Model):
     latitude    = models.DecimalField(max_digits=9, decimal_places=6, default=Decimal("0.0"))
     longitude   = models.DecimalField(max_digits=9, decimal_places=6, default=Decimal("0.0"))
 
+    def __unicode__(self):
+        return unicode(self.name)
+
 class State(models.Model):
     class Translation(translation.Translation):
         name = models.CharField(max_length=64)
@@ -67,3 +76,7 @@ class State(models.Model):
     latitude    = models.DecimalField(max_digits=9, decimal_places=6, default=Decimal("0.0"))
     longitude   = models.DecimalField(max_digits=9, decimal_places=6, default=Decimal("0.0"))
     code        = models.CharField(max_length=2)
+
+    def __unicode__(self):
+        return unicode(self.name)
+
